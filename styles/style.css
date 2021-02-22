@@ -1,0 +1,59 @@
+@font-face {
+    font-family: Stalin;
+    src: url(../fonts/stalin-one-regular.ttf);
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html { overflow:  hidden; }
+
+.main-menu {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+}
+.print {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    cursor: pointer;
+}
+.print li {
+    display: flex;
+    align-items: center;
+}
+.print li p {
+    font-size: 10px;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+}
+.main-menu li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 5px;
+}
+.main-menu li:hover .icon2 {
+    border: 4px solid #9B0707;
+    color: #9B0707;
+    transform: rotate(360deg);
+}
+.main-menu li:hover p {
+    color: #fff;
+}
+.main-menu li p {
+    color: #9B0707;
+    font-size: 25px;
+    font-family: "Stalin", sans-serif;
+    transition: .5s;
+    text-shadow: 1px 1px 1px rgba(155,7,7,0), 0 0 25px rgba(0,0,0,1), 0 0 25px rgba(0,0,0,1);
+}
+
+
