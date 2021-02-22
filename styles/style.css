@@ -17,23 +17,31 @@ html { overflow:  hidden; }
 .main-menu {
     position: absolute;
     bottom: 10%;
-    left: 10%;
+    left: 5%;
+    z-index: 99;
 }
-.print {
+.back-link {
     position: absolute;
     bottom: 10%;
-    right: 10%;
-    cursor: pointer;
+    z-index: 99;
+    transition: .5s;
 }
-.print li {
+.back-link:hover {
+    color: #fff;
+}
+.print {
+    z-index: 99;
+    position: absolute;
+    bottom: 10%;
+    right: 3%;
+    cursor: pointer;
     display: flex;
     align-items: center;
-}
-.print li p {
-    font-size: 10px;
+    font-size: 16px;
     font-family: "Montserrat", sans-serif;
     color: #fff;
 }
+
 .main-menu li {
     display: flex;
     align-items: center;
@@ -48,12 +56,29 @@ html { overflow:  hidden; }
 .main-menu li:hover p {
     color: #fff;
 }
-.main-menu li p {
+.main-menu li p, .back-link {
     color: #9B0707;
     font-size: 25px;
     font-family: "Stalin", sans-serif;
     transition: .5s;
     text-shadow: 1px 1px 1px rgba(155,7,7,0), 0 0 25px rgba(0,0,0,1), 0 0 25px rgba(0,0,0,1);
 }
+.content  {
+    top: 155%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 70%;
+    background-color: #232323;
+    opacity: .8;
+    height: 450px;
+    position: absolute;
+}
 
-
+@media screen and (max-width: 600px) {
+    .print {
+        bottom: 2%;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}

@@ -15,23 +15,34 @@ window.addEventListener('mousemove', event => {
     mouse1.x = event.x + canvas1.clientLeft/2;
     mouse1.y = event.y + canvas1.clientTop/2;
 });
+let moveYDown = 5; //переменная для движения вниз отрисовки по Y
+let moveYUp = 5; //переменная для движения вверх отрисовки по Y
+
 function drawImage() {
     let imageWidth = png.width;
     let imageHeight = png.height;
+
     const data = ctx.getImageData( 0, 0, imageWidth, imageHeight);
+
     ctx.clearRect(0, 0, canvas1.width, canvas1.height);
 
     class Particle {
+
         constructor(x, y, color, size) {
-            this.x = x + canvas1.width/2 - png.width * 2,
-                this.y = y + canvas1.height/5 - png.height *2,
+            this.moveYUp = moveYUp;
+            this.moveYDown = moveYDown;
+                this.x = x + canvas1.width/2 - png.width * 2,
+                this.y = y + canvas1.height/this.moveYUp - png.height *2,
                 this.color = color,
+
+
                 this.size = 1.8,
                 this.baseX = x + canvas1.width/2 - png.width * 2,
-                this.baseY = y + canvas1.height/5 - png.height * 2,
+                this.baseY = y + canvas1.height/this.moveYDown - png.height * 2,
                 this.density = (Math.random() * 10) + 2;
         }
         draw() {
+
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.closePath();
@@ -88,7 +99,7 @@ function drawImage() {
     }
     function  animate() {
         requestAnimationFrame(animate);
-        ctx.fillStyle = 'rgba(0, 0, 0, .1)';
+        ctx.fillStyle = 'rgba(0, 0, 0, 0)';
         ctx.fillRect(0, 0, innerWidth, innerHeight);
 
         for (let i = 0; i < particleArray.length; i++) {
