@@ -12,19 +12,22 @@
     margin: 0;
     padding: 0;
 }
-html { overflow:  hidden; }
-
+html {
+    overflow:  hidden;
+    font-size: 20px;
+}
+ul {
+    list-style: none;
+}
 .main-menu {
     position: absolute;
     bottom: 10%;
-    left: 5%;
     z-index: 99;
 }
-.back-link {
+.back-link p {
     position: absolute;
     bottom: 10%;
     z-index: 99;
-    transition: .5s;
 }
 .back-link:hover {
     color: #fff;
@@ -41,10 +44,11 @@ html { overflow:  hidden; }
     font-family: "Montserrat", sans-serif;
     color: #fff;
 }
+.print p {
+    white-space: nowrap;
+}
 
 .main-menu li {
-    display: flex;
-    align-items: center;
     cursor: pointer;
     padding-top: 5px;
 }
@@ -58,27 +62,38 @@ html { overflow:  hidden; }
 }
 .main-menu li p, .back-link {
     color: #9B0707;
-    font-size: 25px;
+    font-size: 1.8rem;
     font-family: "Stalin", sans-serif;
     transition: .5s;
     text-shadow: 1px 1px 1px rgba(155,7,7,0), 0 0 25px rgba(0,0,0,1), 0 0 25px rgba(0,0,0,1);
 }
 .content  {
-    top: 155%;
+
     left: 0;
     right: 0;
     margin: 0 auto;
-    width: 70%;
     background-color: #232323;
     opacity: .8;
-    height: 450px;
     position: absolute;
 }
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1200px) {
+    .main-menu li p, .back-link {
+        font-size: 1.3rem;
+    }
+}
+@media screen and (max-width: 767px) {
     .print {
         bottom: 2%;
         right: 50%;
         transform: translateX(50%);
     }
+    .main-menu, .back-link p {
+        bottom: 6%;
+    }
+    .main-menu li {
+        text-align: center;
+    }
+
 }
+
+.main-menu li p, .back-link
