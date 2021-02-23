@@ -1,6 +1,8 @@
 const mainMenuLi = document.querySelectorAll('.main-menu li'),
     backLink = document.querySelector('.back-link p'),
-    content = document.querySelector('.content');
+    content = document.querySelector('.content'),
+    wrapper = document.querySelector('.wrapper'),
+    socialBox = document.querySelector('.social-box');
 
 let backLinkWidth = backLink.getBoundingClientRect().width;
 //Кнопка "назад" за экраном
@@ -83,3 +85,7 @@ mainMenuLi.forEach(item => {
     item.addEventListener('click', showContent)
 });
 backLink.addEventListener('click', hideContent);
+
+//Даём класс картинке с фото, при ховере соц. иконок
+socialBox.addEventListener('mouseover', () => wrapper.classList.add('hover'));
+socialBox.addEventListener('mouseout', () => wrapper.classList.remove('hover'));

@@ -72,9 +72,49 @@ ul {
     left: 0;
     right: 0;
     margin: 0 auto;
-    background-color: #232323;
-    opacity: .8;
+    background-color: rgba(35, 35, 35, .7);
     position: absolute;
+    padding: 40px;
+}
+.content__inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.content__info {
+    width: 50%;
+}
+.social-box {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.social-box svg {
+    width: 50px;
+    height: 50px;
+}
+.linkedin {
+    fill: #fff;
+}
+.content__info {
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    padding-right: 20px;
+}
+.content__info {
+    font-size: 0.7rem;
+}
+.content__info h2 {
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.social-box a {
+    transition: .3s;
+}
+.social-box a:hover {
+    opacity: .8;
 }
 @media screen and (max-width: 1200px) {
     .main-menu li p, .back-link {
