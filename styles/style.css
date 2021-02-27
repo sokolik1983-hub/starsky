@@ -11,6 +11,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", sans-serif;
 }
 html {
     overflow:  hidden;
@@ -19,6 +20,7 @@ html {
 ul {
     list-style: none;
 }
+
 .main-menu {
     position: absolute;
     bottom: 10%;
@@ -28,6 +30,7 @@ ul {
     position: absolute;
     bottom: 10%;
     z-index: 99;
+    font-family: "Stalin", sans-serif;
 }
 .back-link:hover {
     color: #fff;
@@ -116,12 +119,163 @@ ul {
 .social-box a:hover {
     opacity: .8;
 }
+.d-none {
+    display: none;
+}
+.js-projects ul {
+    display: flex;
+}
+.js-projects ul li {
+    color: #fff;
+    font-family:  "Montserrat", sans-serif;
+    padding: 0 20px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+}
+.js-projects ul li.active {
+    border-right: 1px solid #fff;
+    border-bottom: 5px solid red;
+}
+.js-projects__cont {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+}
+
+/*Стили для табов*/
+.tabs {
+    display: flex;
+    position: relative;
+}
+.tabs .line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    border-radius: 15px;
+    background-color: red;
+    transition: all 0.2s ease;
+}
+.tab-item {
+    min-width: 80px;
+    padding: 16px 20px 11px 20px;
+
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 5px solid transparent;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.tab-item:hover {
+    opacity: 1;
+    background-color: rgba(255, 0, 0, 0.05);
+    border-color: rgba(255, 0, 0, 0.1);
+}
+.tab-item.active {
+    opacity: 1;
+}
+.tab-content {
+    padding: 28px 0;
+}
+.tab-pane {
+    color: #333;
+    display: none;
+
+}
+.tab-pane.active {
+    display: block;
+}
+.tab-pane__wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.tab-pane h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+.tab-content__info {
+    color: #fff;
+    max-width: 50%;
+}
+.tab-content__btn {
+    padding-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+.tab-content__btn a {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #9B0707;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: .3s;
+    z-index: 101;
+    background-color: #9B0707;
+    display: flex;
+    align-items: center;
+}
+.tab-content__btn a:hover {
+    background-color: transparent;
+}
+.tab-content__btn a svg {
+    width: 10px;
+}
+.tab-content__img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.tab-content__img img {
+    width: 500px;
+    height: auto;
+}
+.tab-content__btn-git {
+    margin-left: 20px;
+}
+/*Конец стили для табов*/
 @media screen and (max-width: 1200px) {
     .main-menu li p, .back-link {
         font-size: 1.3rem;
     }
+    .content__about {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        overflow: scroll;
+    }
+    .content__info {
+        width: 100%;
+    }
+    .content__img-wrap {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+    }
+    .social-box {
+        width: 50%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .social-box__link {
+        padding: 10px;
+    }
 }
 @media screen and (max-width: 767px) {
+    .content__about {
+        flex-direction: row;
+        justify-content: flex-end;
+        overflow: scroll;
+        position: relative;
+    }
     .print {
         bottom: 2%;
         right: 50%;
@@ -133,7 +287,29 @@ ul {
     .main-menu li {
         text-align: center;
     }
+    .content {
+        padding: 5px;
+    }
+    .content__info, .content__img {
+        position: absolute;
+    }
+    .content__img {
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .content__img-wrap {
+        display: block;
+    }
+    .content__img-wrap .wrapper {
+        margin: 0 auto;
+    }
+    .social-box {
+        width: 100%;
+    }
+    .social-box__link {
+        padding: 5px;
+    }
 
 }
 
-.main-menu li p, .back-link
